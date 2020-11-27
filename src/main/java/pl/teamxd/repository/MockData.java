@@ -2,7 +2,7 @@ package pl.teamxd.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
-import pl.teamxd.model.Location;
+import pl.teamxd.model.entity.Location;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;

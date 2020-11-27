@@ -1,4 +1,4 @@
-package pl.teamxd.model;
+package pl.teamxd.model.entity;
 
 import com.sun.istack.NotNull;
 import lombok.*;
