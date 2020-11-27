@@ -35,4 +35,14 @@ public class Location {
 
     @NotNull
     private int rate;
+
+    public void updateLocation(Location newLocation){
+        this.lat = newLocation.lat;
+        this.lng = newLocation.lng;
+        this.note = newLocation.note;
+        this.date = newLocation.date;
+        this.rate = newLocation.rate;
+
+
+    }
 }

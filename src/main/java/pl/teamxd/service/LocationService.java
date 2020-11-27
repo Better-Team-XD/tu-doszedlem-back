@@ -23,4 +23,17 @@ public class LocationService {
         }
         return locationRepository.save(location);
     }
+
+    public void deleteLocation(long locationId){
+        locationRepository.deleteById(locationId);
+    }
+
+    public Location editLocation(long locationId, Location newLocation){
+        Location previousLocation = locationRepository.findById(locationId)
+                .orElseThrow(IllegalArgumentException::new);
+
+        previousLocation.updateLocation(newLocation);
+        return locationRepository.save(previousLocation);
+
+    }
 }
