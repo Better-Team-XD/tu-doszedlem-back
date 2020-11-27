@@ -1,4 +1,4 @@
-package pl.teamxd.model.request;
+package pl.teamxd.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

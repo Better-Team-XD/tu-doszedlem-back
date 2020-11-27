@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.teamxd.model.request.LocationRequest;
+import pl.teamxd.model.entity.Location;
 import pl.teamxd.service.LocationService;
 
 @RestController
@@ -16,10 +16,19 @@ public class LocationController {
     @GetMapping
     public ResponseEntity<?> getAllLocations(){
         try{
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(locationService.getLocations());
+            return ResponseEntity.ok(locationService.getLocations());
         } catch (Exception e){
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(e.toString());
+        }
+    }
+
+    @PostMapping
+    public ResponseEntity<?> addLocation(@RequestBody Location location){
+        try {
+            return ResponseEntity.ok(locationService.addLocation(location));
+        } catch (Exception e) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(e.toString());
