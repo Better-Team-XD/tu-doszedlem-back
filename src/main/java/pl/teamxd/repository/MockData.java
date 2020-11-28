@@ -2,7 +2,9 @@ package pl.teamxd.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import pl.teamxd.model.security.Role;
 import pl.teamxd.model.entity.Location;
+import pl.teamxd.model.entity.MyUser;
 
 import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class MockData {
     private final LocationRepository locationRepository;
+    private final MyUserRepository myUserRepository;
 
     @PostConstruct
     public void init(){
@@ -23,5 +26,13 @@ public class MockData {
                 .build();
 
         locationRepository.save(location1);
+
+        MyUser myUser = MyUser.builder()
+                .username("kraleppa")
+                .password("password")
+                .role(Role.ADMIN)
+                .build();
+
+        myUserRepository.save(myUser);
     }
 }
