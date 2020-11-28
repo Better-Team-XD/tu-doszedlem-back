@@ -30,7 +30,6 @@ public class MyUser {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    // TODO: fetch type?
     @OneToMany
     private Set<Location> myLocations = new HashSet<>();
 
