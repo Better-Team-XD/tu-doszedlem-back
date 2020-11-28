@@ -9,7 +9,7 @@ import pl.teamxd.repository.MyUserRepository;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements UserDetailsService{
+public class SecurityUserService implements UserDetailsService{
     private final MyUserRepository repository;
 
     @Override

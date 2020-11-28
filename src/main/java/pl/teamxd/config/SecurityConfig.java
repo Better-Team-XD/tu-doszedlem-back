@@ -8,16 +8,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pl.teamxd.service.UserService;
+import pl.teamxd.service.SecurityUserService;
 
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private final UserService userService;
+    private final SecurityUserService securityUserService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService);
+        auth.userDetailsService(securityUserService);
     }
 
     @Bean
