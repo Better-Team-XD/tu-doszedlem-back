@@ -12,6 +12,7 @@ import pl.teamxd.service.LocationService;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/locations")
+@CrossOrigin
 public class LocationController {
     private final LocationService locationService;
 
