@@ -11,13 +11,13 @@ import pl.teamxd.service.MyUserService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/myUsers")
+@RequestMapping("/api/v1/myusers")
 public class MyUserController {
 
     private final MyUserService myUserService;
 
     @PostMapping
-    public ResponseEntity<?>  addMyUser(@RequestBody MyUser myUser) {
+    public ResponseEntity<?> addMyUser(@RequestBody MyUser myUser) {
         try {
             return ResponseEntity.ok(
                 new StandardResponse(Type.SUCCESS, "User added", myUserService.addMyUser(myUser))
@@ -70,4 +70,5 @@ public class MyUserController {
     }
 
     // TODO: edit myUser
+    // TODO: add location to myUser
 }
