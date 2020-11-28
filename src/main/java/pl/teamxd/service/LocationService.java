@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class LocationService {
+
     private final LocationRepository locationRepository;
 
     public LocationResponse getLocations() {
@@ -18,9 +19,11 @@ public class LocationService {
     }
 
     public Location addLocation(Location location){
+
         if (location.getDate() == null){
             location.setDate(LocalDateTime.now());
         }
+
         return locationRepository.save(location);
     }
 
@@ -34,6 +37,5 @@ public class LocationService {
 
         previousLocation.updateLocation(newLocation);
         return locationRepository.save(previousLocation);
-
     }
 }

@@ -14,6 +14,7 @@ import pl.teamxd.service.LocationService;
 @RequestMapping("/api/v1/locations")
 @CrossOrigin
 public class LocationController {
+
     private final LocationService locationService;
 
     @GetMapping
@@ -44,7 +45,7 @@ public class LocationController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> removeLocation(@PathVariable long id){
-        try{
+        try {
             locationService.deleteLocation(id);
             return ResponseEntity.ok(
                     new StandardResponse(Type.SUCCESS, "Location deleted", "")

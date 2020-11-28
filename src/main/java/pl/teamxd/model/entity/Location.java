@@ -22,10 +22,10 @@ public class Location {
     private long id;
 
     @NotNull
-    private double lat;
+    private double latitude;
 
     @NotNull
-    private double lng;
+    private double longitude;
 
     @NotNull
     private String note;
@@ -34,14 +34,14 @@ public class Location {
     private LocalDateTime date;
 
     @NotNull
-    private int rate;
+    private int rating;
 
     public void updateLocation(Location newLocation){
-        this.lat = newLocation.lat;
-        this.lng = newLocation.lng;
+        this.latitude = newLocation.latitude;
+        this.longitude = newLocation.longitude;
         this.note = newLocation.note;
         this.date = newLocation.date;
-        this.rate = newLocation.rate;
+        this.rating = newLocation.rating;
 
 
     }
