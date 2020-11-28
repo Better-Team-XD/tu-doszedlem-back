@@ -30,8 +30,8 @@ public class LocationController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<?> addLocation(@RequestBody Location location, String username){
+    @PostMapping("/{username}")
+    public ResponseEntity<?> addLocation(@RequestBody Location location, @PathVariable String username){
         try {
             return ResponseEntity.ok(
                     new StandardResponse(Type.SUCCESS, "Location added", locationService.addLocation(location, username))
