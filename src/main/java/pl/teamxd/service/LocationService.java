@@ -3,7 +3,7 @@ package pl.teamxd.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.teamxd.model.entity.Location;
-import pl.teamxd.model.response.LocationRequest;
+import pl.teamxd.model.response.LocationResponse;
 import pl.teamxd.repository.LocationRepository;
 
 import java.time.LocalDateTime;
@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 public class LocationService {
     private final LocationRepository locationRepository;
 
-    public LocationRequest getLocations() {
-        return new LocationRequest(locationRepository.findAll());
+    public LocationResponse getLocations() {
+        return new LocationResponse(locationRepository.findAll());
     }
 
     public Location addLocation(Location location){

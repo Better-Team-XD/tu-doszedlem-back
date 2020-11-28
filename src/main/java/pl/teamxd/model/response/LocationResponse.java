@@ -9,6 +9,6 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public class LocationRequest {
+public class LocationResponse {
     private final List<Location> locations;
 }
