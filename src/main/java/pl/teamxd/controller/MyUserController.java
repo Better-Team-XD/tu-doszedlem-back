@@ -70,5 +70,4 @@ public class MyUserController {
     }
 
     // TODO: edit myUser
-    // TODO: add location to myUser
 }

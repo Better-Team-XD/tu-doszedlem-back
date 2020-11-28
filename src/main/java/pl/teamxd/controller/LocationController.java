@@ -31,10 +31,10 @@ public class LocationController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addLocation(@RequestBody Location location){
+    public ResponseEntity<?> addLocation(@RequestBody Location location, String username){
         try {
             return ResponseEntity.ok(
-                    new StandardResponse(Type.SUCCESS, "Location added", locationService.addLocation(location))
+                    new StandardResponse(Type.SUCCESS, "Location added", locationService.addLocation(location, username))
             );
         } catch (Exception e) {
             return ResponseEntity
