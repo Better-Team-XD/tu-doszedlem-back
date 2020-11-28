@@ -5,6 +5,8 @@ import lombok.*;
 import pl.teamxd.model.security.Role;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,6 +20,7 @@ public class MyUser {
     private Long id;
 
     @NotNull
+    @Column(unique = true)
     private String username;
 
     @NotNull
@@ -26,5 +29,23 @@ public class MyUser {
     @NotNull
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany
+    private Set<Location> myLocations = new HashSet<>();
+
+    public void addLocation(Location location) {
+        if (location == null) {
+            throw new NullPointerException("Location cannot be null");
+        }
+
+        myLocations.add(location);
+    }
+
+    public void updateMyUser(MyUser updatedMyUser) {
+        this.username = updatedMyUser.username;
+        this.password = updatedMyUser.password;
+        this.role = updatedMyUser.role;
+        this.myLocations = updatedMyUser.myLocations;
+    }
 
 }

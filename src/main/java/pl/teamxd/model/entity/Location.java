@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Location {
 
     @Id
@@ -42,7 +43,5 @@ public class Location {
         this.note = newLocation.note;
         this.date = newLocation.date;
         this.rating = newLocation.rating;
-
-
     }
 }
