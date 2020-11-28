@@ -15,11 +15,11 @@ public class MockData {
     @PostConstruct
     public void init(){
         Location location1 = Location.builder()
-                .lat(6.9)
-                .lng(21.37)
+                .latitude(6.9)
+                .longitude(21.37)
                 .note("Tutaj doszedlem :-)")
                 .date(LocalDateTime.now())
-                .rate(5)
+                .rating(5)
                 .build();
 
         locationRepository.save(location1);
