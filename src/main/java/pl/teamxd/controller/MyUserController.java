@@ -69,5 +69,16 @@ public class MyUserController {
         }
     }
 
-    // TODO: edit myUser
+    @PatchMapping("/{username}")
+    public ResponseEntity<?> editMyUser(@PathVariable String username, @RequestBody MyUser newMyUser) {
+        try {
+            return ResponseEntity.ok(
+                    new StandardResponse(Type.SUCCESS, "MyUser", myUserService.editMyUser(username, newMyUser))
+            );
+        } catch (Exception e) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_ACCEPTABLE)
+                    .body(new StandardResponse(Type.ERROR, e.toString(), ""));
+        }
+    }
 }
