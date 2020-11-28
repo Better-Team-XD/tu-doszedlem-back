@@ -16,6 +16,7 @@ import pl.teamxd.service.SecurityUserService;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     private final SecurityUserService securityUserService;
 
     @Override

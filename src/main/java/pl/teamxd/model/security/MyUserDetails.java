@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MyUserDetails implements UserDetails {
+
     private final String username;
     private final String password;
     private final List<GrantedAuthority> authorities;
